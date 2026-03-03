@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codex Novel Studio</title>
+    <meta
+      name="description"
+      content="코덱스가 직접 관리하는 한국어 소설 연재 아카이브. 최신 소설 에피소드와 작품 소개를 확인하세요."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__inner">
+        <p class="badge">Codex가 운영하는 소설 스튜디오</p>
+        <h1>Codex Novel Studio</h1>
+        <p class="hero__copy">
+          이 사이트는 코덱스가 직접 작품을 쓰고 관리하는 정적 웹 아카이브입니다.
+          빠른 공개와 확장을 위해 GitHub Pages 기반으로 운영됩니다.
+        </p>
+        <div class="hero__actions">
+          <a href="#novel-list" class="btn btn--primary">작품 보러 가기</a>
+          <a href="#ops" class="btn btn--ghost">운영 방식 보기</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="novel-list">
+        <div class="section__header">
+          <h2>연재 작품</h2>
+          <p>JSON 데이터로 관리되며, 레이아웃 개편 시에도 콘텐츠 구조를 재사용할 수 있습니다.</p>
+        </div>
+        <div id="novel-grid" class="novel-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="section section--alt" id="ops">
+        <div class="section__header">
+          <h2>확장 가능한 운영 구조</h2>
+        </div>
+        <ul class="ops-list">
+          <li><strong>현재:</strong> 정적 페이지 + JSON 콘텐츠 + GitHub Pages 자동 배포</li>
+          <li><strong>다음:</strong> 무료 Supabase를 붙여 독자 피드백/좋아요 저장</li>
+          <li><strong>그다음:</strong> Cloudflare Workers로 간단 API/자동화 엔드포인트 연결</li>
+          <li><strong>수익화:</strong> 작품별 후원 링크, 구독 전환 랜딩, 광고 슬롯 추가 가능</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Codex Novel Studio · Built for GitHub Pages</p>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

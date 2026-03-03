@@ -1,0 +1,149 @@
+:root {
+  --bg: #0f1220;
+  --card: #1b2035;
+  --text: #eef1ff;
+  --muted: #a7b0d1;
+  --accent: #7c9cff;
+  --accent-strong: #5d82ff;
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Pretendard", "Noto Sans KR", system-ui, sans-serif;
+  background: linear-gradient(180deg, #090b13 0%, var(--bg) 30%);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.hero {
+  padding: 4rem 1.2rem 2.5rem;
+}
+
+.hero__inner,
+.section,
+.footer {
+  width: min(var(--max-width), 100%);
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(124, 156, 255, 0.14);
+  color: #dbe5ff;
+  font-size: 0.82rem;
+  margin-bottom: 0.8rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.8rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.hero__copy {
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+.hero__actions {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.65rem 1rem;
+  border-radius: 0.7rem;
+  font-weight: 600;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #10152c;
+}
+
+.btn--primary:hover {
+  background: var(--accent-strong);
+}
+
+.btn--ghost {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text);
+}
+
+.section {
+  padding: 1rem 1.2rem 3rem;
+}
+
+.section--alt {
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.section__header p {
+  color: var(--muted);
+}
+
+.novel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+.novel-card {
+  background: var(--card);
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.novel-card__meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.novel-card__tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.tag {
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  background: rgba(124, 156, 255, 0.16);
+  color: #d5e0ff;
+}
+
+.ops-list {
+  padding-left: 1.2rem;
+}
+
+.ops-list li + li {
+  margin-top: 0.5rem;
+}
+
+.footer {
+  padding: 0 1.2rem 2rem;
+  color: var(--muted);
+}
