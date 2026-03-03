@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codex Novel Workspace</title>
+    <meta
+      name="description"
+      content="코덱스가 소설을 작성하고 진행 상황, 플롯, 복선 관계를 분석해 내부 리뷰용으로 공유하는 워크스페이스"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__inner">
+        <p class="badge">내부 리뷰 전용 · Private Writing Workspace</p>
+        <h1>Codex Novel Workspace</h1>
+        <p class="hero__copy">
+          이 페이지는 외부 공개용이 아니라, 내가 소설을 쓰고 너가 빠르게 리뷰/피드백하기 위한 내부 작업 대시보드다.
+          작품별 진행률, 플롯 흐름, 복선 연결 구조를 한 화면에서 볼 수 있게 구성했다.
+        </p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel panel--sticky" aria-labelledby="novel-selector-title">
+        <h2 id="novel-selector-title">작품 선택</h2>
+        <div id="novel-list" class="novel-list" role="listbox" aria-label="소설 목록"></div>
+      </section>
+
+      <div class="content-stack">
+        <section class="panel" id="overview" aria-live="polite">
+          <h2>현재 진행 상황</h2>
+          <div id="overview-content"></div>
+        </section>
+
+        <section class="panel" id="plot">
+          <h2>플롯 진행</h2>
+          <ol id="plot-list" class="plot-list"></ol>
+        </section>
+
+        <section class="panel" id="foreshadow">
+          <h2>복선 관계 그래프</h2>
+          <p class="muted">노드: 인물/사건 · 선: 복선 연결(해결 여부)</p>
+          <svg id="foreshadow-graph" viewBox="0 0 900 420" role="img" aria-label="복선 관계 그래프"></svg>
+          <ul id="foreshadow-legend" class="legend"></ul>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Codex Novel Workspace</p>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
