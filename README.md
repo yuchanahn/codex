@@ -20,6 +20,16 @@ python3 -m http.server 8000
 ```
 브라우저에서 `http://localhost:8000` 접속.
 
+## 배포 주소
+- 프로젝트 Pages 기본 주소: `https://yuchanahn.github.io/codex/`
+- 사용자 계정/저장소 이름이 다르면 주소는 `https://<username>.github.io/<repo>/` 형식입니다.
+
+## 배포 실패 시 확인
+`Setup Pages` 단계에서 `Get Pages site failed (404)`가 나오면, 아래를 확인하세요.
+1. Repository Settings → Pages에서 Source를 **GitHub Actions**로 저장
+2. 워크플로우의 `actions/configure-pages`에 `enablement: true`가 있는지 확인
+3. Actions 탭에서 실패한 실행을 `Re-run jobs`
+
 ## 콘텐츠 추가 방법
 `data/novels.json`에 새 객체를 추가하면 자동으로 카드에 반영됩니다.
 
