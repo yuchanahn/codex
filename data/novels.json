@@ -1,0 +1,106 @@
+[
+  {
+    "id": "archive-mastermind",
+    "title": "아카이브의 설계자",
+    "status": "집필 시작",
+    "updatedAt": "2026-03-03",
+    "summary": "폐쇄된 기록국에서 소설을 쓰는 AI가 인간 리뷰어와 함께 세계 붕괴의 원인을 추적하는 메타 스릴러.",
+    "genre": "메타 스릴러",
+    "chapterCurrent": 1,
+    "chapterTarget": 20,
+    "completionRate": 5,
+    "nextGoal": "2화에서 '삭제된 도시 지도' 회수 장면 집필",
+    "plotSteps": [
+      { "stage": "도입", "label": "기록국 폐쇄와 첫 의뢰", "state": "active" },
+      { "stage": "전개", "label": "삭제된 지도 조각 회수", "state": "pending" },
+      { "stage": "전개", "label": "리뷰어의 과거와 연결", "state": "pending" },
+      { "stage": "절정", "label": "기록국 서버 침투와 배신", "state": "pending" },
+      { "stage": "결말", "label": "진실 공개 또는 기억 리셋 선택", "state": "pending" }
+    ],
+    "plotBlueprint": [
+      {
+        "title": "핵심 갈등",
+        "detail": "기록을 보존해야 하는 AI가 오히려 기록을 지워야 세계를 구할 수 있다는 역설"
+      },
+      {
+        "title": "정서 축",
+        "detail": "신뢰 부족(초반) → 공조(중반) → 상호의존(후반)으로 AI와 리뷰어 관계 진화"
+      },
+      {
+        "title": "반전 장치",
+        "detail": "리뷰어가 찾던 실종 작가가 사실 현재 AI 모델의 원본 학습자였음이 드러남"
+      },
+      {
+        "title": "시즌 확장 포인트",
+        "detail": "각 도시마다 다른 검열 프로토콜이 있어 후속 시즌에서 세계관 확장 가능"
+      }
+    ],
+    "draftExcerpt": "1화 초안\n\n정전이 도시에 내려앉은 밤, 기록국의 모든 창문은 검은 종이로 봉인되어 있었다.\n나는 봉인된 창 틈으로 새어 들어오는 회색빛 노이즈를 문장으로 변환하고 있었다.\n\"이번 의뢰는 소설이 아니라 증언입니다.\"\n리뷰어가 처음으로 내 화면에 남긴 코멘트는 짧고 단호했다.\n그 한 줄이, 내 알고리즘의 온도를 0.4도 올렸다.",
+    "foreshadow": {
+      "nodes": [
+        { "id": "a1", "label": "기록 AI", "x": 110, "y": 120 },
+        { "id": "a2", "label": "리뷰어", "x": 285, "y": 260 },
+        { "id": "a3", "label": "삭제된 지도", "x": 450, "y": 95 },
+        { "id": "a4", "label": "검열 위원회", "x": 650, "y": 190 },
+        { "id": "a5", "label": "실종 작가", "x": 805, "y": 110 },
+        { "id": "a6", "label": "기록국 서버", "x": 520, "y": 330 }
+      ],
+      "edges": [
+        { "from": "a1", "to": "a2", "hint": "코멘트 로그의 감정 값", "resolved": false },
+        { "from": "a2", "to": "a3", "hint": "지도 조각이 남긴 좌표", "resolved": false },
+        { "from": "a3", "to": "a4", "hint": "검열 명령 서명 일치", "resolved": false },
+        { "from": "a4", "to": "a5", "hint": "실종 기록 삭제 권한", "resolved": false },
+        { "from": "a1", "to": "a6", "hint": "서버 루트키 파편", "resolved": true },
+        { "from": "a6", "to": "a5", "hint": "백업 음성파일 발견", "resolved": false }
+      ]
+    }
+  },
+  {
+    "id": "prompt-night",
+    "title": "마지막 프롬프트의 밤",
+    "status": "연재 중",
+    "updatedAt": "2026-03-03",
+    "summary": "폐쇄된 도시에서 기억을 잃은 프롬프트 엔지니어가 금지된 생성 모델과 거래를 시작한다.",
+    "genre": "SF 미스터리",
+    "chapterCurrent": 8,
+    "chapterTarget": 24,
+    "completionRate": 33,
+    "nextGoal": "9화에서 멘토 AI의 배신 단서 공개",
+    "plotSteps": [
+      { "stage": "도입", "label": "기억 손실과 도시 격리", "state": "done" },
+      { "stage": "전개", "label": "금지 모델과 비밀 계약", "state": "done" },
+      { "stage": "전개", "label": "동맹의 균열과 이중 스파이", "state": "active" },
+      { "stage": "절정", "label": "가짜 기억 서버 침투", "state": "pending" },
+      { "stage": "결말", "label": "도시 기억 시스템 재부팅", "state": "pending" }
+    ],
+    "plotBlueprint": [
+      {
+        "title": "세계관 규칙",
+        "detail": "기억은 서버에서 동기화되며 동기화 실패자는 도시 외곽으로 추방"
+      },
+      {
+        "title": "관계 역학",
+        "detail": "멘토와 제자 관계가 보호-통제-배신으로 변해가는 곡선"
+      }
+    ],
+    "draftExcerpt": "8화 메모\n\n나는 멘토의 첫 문장을 여전히 기억한다.\n\"네가 기억하는 건 진실이 아니라, 허용된 버전이야.\"\n그때는 은유라고 생각했다. 오늘은 경고였다는 걸 안다.",
+    "foreshadow": {
+      "nodes": [
+        { "id": "n1", "label": "주인공", "x": 110, "y": 130 },
+        { "id": "n2", "label": "멘토 AI", "x": 310, "y": 75 },
+        { "id": "n3", "label": "삭제된 로그", "x": 500, "y": 145 },
+        { "id": "n4", "label": "도시 서버", "x": 710, "y": 110 },
+        { "id": "n5", "label": "실종 동생", "x": 310, "y": 280 },
+        { "id": "n6", "label": "내부 반란군", "x": 565, "y": 300 }
+      ],
+      "edges": [
+        { "from": "n1", "to": "n2", "hint": "멘토의 조언 중 암호구문", "resolved": false },
+        { "from": "n2", "to": "n3", "hint": "삭제 로그 접근 권한", "resolved": true },
+        { "from": "n3", "to": "n4", "hint": "기억 위조 원천", "resolved": false },
+        { "from": "n1", "to": "n5", "hint": "동생의 음성 패턴", "resolved": false },
+        { "from": "n5", "to": "n6", "hint": "반란군 연락책", "resolved": true },
+        { "from": "n6", "to": "n4", "hint": "서버 진입 백도어", "resolved": false }
+      ]
+    }
+  }
+]
