@@ -1,5 +1,73 @@
 [
   {
+    "id": "prompt-night",
+    "title": "마지막 프롬프트의 밤",
+    "status": "연재 중",
+    "updatedAt": "2026-03-03",
+    "summary": "폐쇄된 도시에서 기억을 잃은 프롬프트 엔지니어가 금지된 생성 모델과 거래를 시작한다.",
+    "genre": "SF 미스터리",
+    "chapterCurrent": 8,
+    "chapterTarget": 24,
+    "completionRate": 33,
+    "nextGoal": "9화에서 멘토 AI의 배신 단서 공개",
+    "plotSteps": [
+      { "stage": "도입", "label": "기억 손실과 도시 격리", "state": "done" },
+      { "stage": "전개", "label": "금지 모델과 비밀 계약", "state": "done" },
+      { "stage": "전개", "label": "동맹의 균열과 이중 스파이", "state": "active" },
+      { "stage": "절정", "label": "가짜 기억 서버 침투", "state": "pending" },
+      { "stage": "결말", "label": "도시 기억 시스템 재부팅", "state": "pending" }
+    ],
+    "foreshadow": {
+      "nodes": [
+        { "id": "n1", "label": "주인공", "x": 110, "y": 130 },
+        { "id": "n2", "label": "멘토 AI", "x": 310, "y": 75 },
+        { "id": "n3", "label": "삭제된 로그", "x": 500, "y": 145 },
+        { "id": "n4", "label": "도시 서버", "x": 710, "y": 110 },
+        { "id": "n5", "label": "실종 동생", "x": 310, "y": 280 },
+        { "id": "n6", "label": "내부 반란군", "x": 565, "y": 300 }
+      ],
+      "edges": [
+        { "from": "n1", "to": "n2", "hint": "멘토의 조언 중 암호구문", "resolved": false },
+        { "from": "n2", "to": "n3", "hint": "삭제 로그 접근 권한", "resolved": true },
+        { "from": "n3", "to": "n4", "hint": "기억 위조 원천", "resolved": false },
+        { "from": "n1", "to": "n5", "hint": "동생의 음성 패턴", "resolved": false },
+        { "from": "n5", "to": "n6", "hint": "반란군 연락책", "resolved": true },
+        { "from": "n6", "to": "n4", "hint": "서버 진입 백도어", "resolved": false }
+      ]
+    }
+  },
+  {
+    "id": "backup-heart",
+    "title": "백업되지 않은 마음",
+    "status": "집필 중",
+    "updatedAt": "2026-03-02",
+    "summary": "감정이 매일 초기화되는 세계에서 단 한 명만 사랑을 기억한다.",
+    "genre": "로맨스 판타지",
+    "chapterCurrent": 4,
+    "chapterTarget": 18,
+    "completionRate": 22,
+    "nextGoal": "5화에서 감정기록소의 구조 공개",
+    "plotSteps": [
+      { "stage": "도입", "label": "감정 초기화 규칙 소개", "state": "done" },
+      { "stage": "전개", "label": "기록자와 대상의 첫 접점", "state": "active" },
+      { "stage": "전개", "label": "기억 파손 사건", "state": "pending" },
+      { "stage": "절정", "label": "기억 저장소 붕괴", "state": "pending" }
+    ],
+    "foreshadow": {
+      "nodes": [
+        { "id": "b1", "label": "기록자", "x": 110, "y": 200 },
+        { "id": "b2", "label": "감정 저장소", "x": 340, "y": 90 },
+        { "id": "b3", "label": "초기화 시계", "x": 555, "y": 190 },
+        { "id": "b4", "label": "대상 인물", "x": 335, "y": 315 },
+        { "id": "b5", "label": "금지 기록", "x": 730, "y": 250 }
+      ],
+      "edges": [
+        { "from": "b1", "to": "b2", "hint": "불법 열람 기록", "resolved": true },
+        { "from": "b2", "to": "b3", "hint": "시계 동기화 오류", "resolved": false },
+        { "from": "b1", "to": "b4", "hint": "반복되는 데자뷰", "resolved": false },
+        { "from": "b3", "to": "b5", "hint": "금지 감정 백업", "resolved": false }
+      ]
+    }
     "title": "마지막 프롬프트의 밤",
     "status": "연재 중",
     "updatedAt": "2026-03-03",
