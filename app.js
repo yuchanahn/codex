@@ -37,6 +37,14 @@ const renderNovelCard = (novel) => {
       <h3>${escapeHtml(normalized.title)}</h3>
       <p class="novel-card__meta">${escapeHtml(normalized.status)} · ${escapeHtml(normalized.updatedAt)}</p>
       <p>${escapeHtml(normalized.summary)}</p>
+const renderNovelCard = (novel) => {
+  const tags = novel.tags.map((tag) => `<span class="tag">${tag}</span>`).join('');
+
+  return `
+    <article class="novel-card">
+      <h3>${novel.title}</h3>
+      <p class="novel-card__meta">${novel.status} · ${novel.updatedAt}</p>
+      <p>${novel.summary}</p>
       <div class="novel-card__tags">${tags}</div>
     </article>
   `;
@@ -57,6 +65,7 @@ const loadNovels = async () => {
       return;
     }
 
+    const novels = await response.json();
     novelGrid.innerHTML = novels.map(renderNovelCard).join('');
   } catch (error) {
     novelGrid.innerHTML = `
