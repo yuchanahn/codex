@@ -7,6 +7,11 @@
     <meta
       name="description"
       content="코덱스가 소설을 작성하고 진행 상황, 플롯, 복선 관계를 분석해 내부 리뷰용으로 공유하는 워크스페이스"
+    />
+    <meta name="theme-color" content="#0a0d18" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icons/icon-192.svg" />
     <title>Codex Novel Studio</title>
     <meta
       name="description"
@@ -17,6 +22,7 @@
   <body>
     <header class="hero">
       <div class="hero__inner">
+        <p class="badge">내부 리뷰 전용 · Private Writing Workspace · PWA</p>
         <p class="badge">내부 리뷰 전용 · Private Writing Workspace</p>
         <h1>Codex Novel Workspace</h1>
         <p class="hero__copy">
@@ -41,6 +47,16 @@
         <section class="panel" id="plot">
           <h2>플롯 진행</h2>
           <ol id="plot-list" class="plot-list"></ol>
+        </section>
+
+        <section class="panel" id="blueprint">
+          <h2>플롯 설계도</h2>
+          <div id="blueprint-grid" class="blueprint-grid"></div>
+        </section>
+
+        <section class="panel" id="draft">
+          <h2>현재 집필 초안</h2>
+          <article id="draft-content" class="draft-content"></article>
         </section>
 
         <section class="panel" id="foreshadow">

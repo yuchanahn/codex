@@ -2,6 +2,10 @@ const year = document.querySelector('#year');
 const novelList = document.querySelector('#novel-list');
 const overviewContent = document.querySelector('#overview-content');
 const plotList = document.querySelector('#plot-list');
+const blueprintGrid = document.querySelector('#blueprint-grid');
+const draftContent = document.querySelector('#draft-content');
+const graph = document.querySelector('#foreshadow-graph');
+const legend = document.querySelector('#foreshadow-legend');
 const graph = document.querySelector('#foreshadow-graph');
 const legend = document.querySelector('#foreshadow-legend');
 const novelGrid = document.querySelector('#novel-grid');
@@ -46,6 +50,8 @@ const normalizeNovel = (novel) => {
     completionRate: Number.isFinite(Number(safe.completionRate)) ? Number(safe.completionRate) : 0,
     nextGoal: safe.nextGoal ? String(safe.nextGoal) : '다음 목표 미등록',
     plotSteps: Array.isArray(safe.plotSteps) ? safe.plotSteps : [],
+    plotBlueprint: Array.isArray(safe.plotBlueprint) ? safe.plotBlueprint : [],
+    draftExcerpt: safe.draftExcerpt ? String(safe.draftExcerpt) : '초안 없음',
     foreshadow: safe.foreshadow && typeof safe.foreshadow === 'object' ? safe.foreshadow : { nodes: [], edges: [] }
   };
 };
@@ -86,6 +92,22 @@ const renderPlot = (novel) => {
   });
 
   plotList.innerHTML = items.length > 0 ? items.join('') : '<li>플롯 데이터 없음</li>';
+};
+
+const renderBlueprint = (novel) => {
+  const items = novel.plotBlueprint.map((item) => {
+    const safeItem = item && typeof item === 'object' ? item : {};
+    const title = safeItem.title ? String(safeItem.title) : '단계';
+    const detail = safeItem.detail ? String(safeItem.detail) : '설명 없음';
+
+    return `<article class="blueprint-card"><h3>${escapeHtml(title)}</h3><p>${escapeHtml(detail)}</p></article>`;
+  });
+
+  blueprintGrid.innerHTML = items.length > 0 ? items.join('') : '<p>설계도 데이터 없음</p>';
+};
+
+const renderDraft = (novel) => {
+  draftContent.textContent = novel.draftExcerpt;
 };
 
 const drawForeshadowGraph = (novel) => {
@@ -143,6 +165,16 @@ const renderNovelButtons = (novels, activeId, onClick) => {
   });
 };
 
+const registerServiceWorker = async () => {
+  if ('serviceWorker' in navigator) {
+    try {
+      await navigator.serviceWorker.register('./sw.js');
+    } catch (error) {
+      console.error('Service Worker 등록 실패', error);
+    }
+  }
+};
+
 const boot = async () => {
   const response = await fetch('./data/novels.json');
   if (!response.ok) {
@@ -170,16 +202,21 @@ const boot = async () => {
 
     renderOverview(current);
     renderPlot(current);
+    renderBlueprint(current);
+    renderDraft(current);
     drawForeshadowGraph(current);
   };
 
   render();
+  await registerServiceWorker();
 };
 
 boot().catch((error) => {
   overviewContent.innerHTML =
     '<p>데이터를 불러오는 중 오류가 발생했습니다. data/novels.json 형식을 확인해주세요.</p>';
   plotList.innerHTML = '<li>오류로 인해 플롯을 표시할 수 없습니다.</li>';
+  blueprintGrid.innerHTML = '<p>오류로 인해 설계도를 표시할 수 없습니다.</p>';
+  draftContent.textContent = '오류로 인해 초안을 표시할 수 없습니다.';
   legend.innerHTML = '<li>오류로 인해 복선 그래프를 표시할 수 없습니다.</li>';
   graph.innerHTML = '';
   console.error(error);
